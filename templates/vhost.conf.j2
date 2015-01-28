@@ -1,0 +1,18 @@
+server {
+  listen       {{ listen_port }};
+  server_name {% for vhost in vhost_names %} {{ vhost }}{% endfor %};
+
+  location / {
+    proxy_pass http://{{ app_cluster_name }};
+
+    # Rewrite the Host header to the value in the client request
+    # or primary server name
+    proxy_set_header Host $host;
+  }
+}
+
+upstream {{ app_cluster_name }} {
+{% for server in groups['appservers'] %}
+  server {{ server }}:{{ hostvars[server]['port'] }};
+{% endfor %}
+}

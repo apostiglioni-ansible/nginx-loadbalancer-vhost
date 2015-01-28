@@ -1,0 +1,6 @@
+---
+listen_port: 80
+conf_filename: vhost.conf 
+conf_owner: root
+conf_group: root
+app_cluster_name: appcluster

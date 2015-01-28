@@ -1,0 +1,4 @@
+---
+-
+  name: create virtaulhost {{conf_filename}} 
+  template: src=vhost.conf.j2 dest=/etc/nginx/conf.d/{{conf_filename}} owner={{conf_owner}} group={{conf_group}} mode=0644
