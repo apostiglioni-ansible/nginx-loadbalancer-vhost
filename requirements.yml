@@ -1,4 +1,1 @@
--
-  name: nginx
-  src: https://github.com/apostiglioni-ansible/nginx
-
+---
