@@ -1,5 +1,10 @@
 server {
   listen       {{ listen_port }};
+  server_name {% for vhost in vhost_names %} {{ vhost }}{% endfor %};
+  return       301 https://$server_name$request_uri;
+}
+
+server {
   listen       {{ ssl_listen_port }} ssl;
   server_name {% for vhost in vhost_names %} {{ vhost }}{% endfor %};
 
