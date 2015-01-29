@@ -18,6 +18,6 @@ server {
 
 upstream {{ app_cluster_name }} {
 {% for server in groups['appservers'] %}
-  server {{ server }}:{{ hostvars[server]['port'] }};
+  server {{ server }}:{{ hostvars[server]['appserver_port'] }};
 {% endfor %}
 }

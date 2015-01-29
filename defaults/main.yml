@@ -7,5 +7,6 @@ conf_group: root
 conf_dir: /etc/nginx/sites-available
 conf_enabled_dir: /etc/nginx/sites-enabled
 app_cluster_name: appcluster
+appserver_port: 8080
 ssl_certificate: /etc/nginx/certs/{{vhost_names[0]}}.cert
 ssl_certificate_key: /etc/nginx/certs/{{vhost_names[0]}}.key
