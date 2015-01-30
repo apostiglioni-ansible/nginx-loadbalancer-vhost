@@ -6,6 +6,6 @@
 -
   name: enable site
   file: src={{ item.path }} dest={{ item.dest }} state=link
-  when: not conf_enabled_dir 
+  when: conf_enabled_dir
   with_items:
     - { path: "{{conf_dir}}/{{conf_filename}}", dest: "{{conf_enabled_dir}}/{{conf_filename}}" }
